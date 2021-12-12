@@ -26,20 +26,10 @@ useEffect(()=>{
 
 const Loading=()=>{
     return(
-        <>
-        <div className="col-md-3">
-            <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-            <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-            <Skeleton height={350} />
-        </div>
-        <div className="col-md-3">
-            <Skeleton height={350} />
-        </div>
-        </>
+        <div className="fw-bolder text-center text-black">
+        Loading...
+            </div>
+       
     )
 }
 
@@ -57,10 +47,11 @@ const ShowProducts=()=>{
             <button type="button" className="btn btn-outline-dark me-2" onClick={()=>filterProduct("electronics")}>Electronic</button>
             <button type="button" className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery")}>Jewellary</button>
         </div>
+        
         {filter.map((product)=>{
             return(
                 <>
-                <div className="col-md-3 mb-4">
+                <div className="col-md-3 mb-4" >
                 <div className="card h-100 text-center p-4" key={product.id}>
                     <img className="card-img-top" src={product.image} alt={product.title} height="350px" />
                     <div className="card-body">

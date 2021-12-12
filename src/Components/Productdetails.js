@@ -34,19 +34,9 @@ useEffect(()=>{
 const Loading=()=>{
     return(
         <>
-        
-        <div className="col-md-6">
-            <Skeleton height={350} />
-        </div>
-        <div className="col-md-6">
-            <Skeleton height={50} width={300} />
-            <Skeleton height={75} />
-            <Skeleton height={25} width={150} />
-            <Skeleton height={50} />
-            <Skeleton height={150} />
-            <Skeleton height={50} width={100} />
-            <Skeleton height={50} wisth={100}/>
-        </div>
+        <div className="fw-bolder text-center text-black-50">
+        Loading...
+            </div>
         </>
     )
 }
