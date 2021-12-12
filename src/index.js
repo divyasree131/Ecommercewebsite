@@ -1,17 +1,33 @@
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
+import '../node_modules/font-awesome/css/font-awesome.min.css'
+import App from './App'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Signup from './Components/Signup'
+import Login from './Components/Login'
+import About from './Components/About'
+import Cart from './Components/Cart'
+import { BrowserRouter,Route } from 'react-router-dom';
+import Products from './Components/Products';
+import Productdetails from './Components/Productdetails';
+import store from './Redux/Store/index'
+import { Provider } from 'react-redux'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+<Provider store={store}>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+<BrowserRouter>
+
+    <Route exact path="/" component = {App} />
+    <Route exact path="/login" component = {Login} />
+    <Route exact path="/signup" component={Signup} />
+    <Route exact path="/products" component={Products} />
+    <Route exact path="/products/:id" component={Productdetails} />
+    <Route exact path="/about" component={About} />
+    <Route exact path="/cart" component={Cart} />
+    </BrowserRouter>
+    </Provider>
+    
+, document.getElementById('root'));
