@@ -4,7 +4,7 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
 import Header from './Header'
 import { useHistory } from 'react-router-dom'
-
+import Footer from './Footer'
 
 const Home = () => {
   let history=useHistory()
@@ -47,7 +47,10 @@ const Home = () => {
      <div>
          <Products />
      </div>
-     
+     <footer>
+     <Footer />
+     </footer>
+   
    </>
     )
   

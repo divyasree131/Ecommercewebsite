@@ -17,7 +17,7 @@ const Productdetails = (props) => {
     }
 
 useEffect(()=>{
-    const getProducts=async()=>{
+    const getProducts=()=>{
         setloading(true);
         axios.get(`https://fakestoreapi.com/products/${id}`)
         .then(response=>{
