@@ -4,7 +4,7 @@ import  Skeleton  from 'react-loading-skeleton'
 import {NavLink} from 'react-router-dom'
 import { useDispatch} from 'react-redux'
 import {AddCart} from '../Redux/Action/index'
-
+import Header from './Header'
 const Productdetails = (props) => {
     
     const id=props.match.params.id
@@ -56,7 +56,7 @@ const ShowProducts1=()=>{
             <p className="lead fw-bolder">{Productdetail.rating && Productdetail.rating.rate}<i className="fa fa-star"></i></p>
         <h3 className="display-6 fw-bolder my-4">${Productdetail.price}</h3>
         <p className="lead">{Productdetail.description}</p>
-        <NavLink to="/cart" onClick={()=>addproduct(Productdetail)} className="btn btn-outline-dark">Add Cart</NavLink>
+        <button type="button" onClick={()=>{addproduct(Productdetail);alert("item added")}} className="btn btn-outline-dark">Add Cart</button>
         <NavLink to="/cart" className="btn btn-outline-dark ms-2 ">Go to cart</NavLink>
         </div>
 
@@ -65,14 +65,9 @@ const ShowProducts1=()=>{
 }
     return (
         <div>
-            
+            <Header />
             <div className="container">
-                <div className="row">
-                    <div className="col-12 mb-5">
-                        <h1>Latest Products</h1>
-                    </div>
-                </div>
-                <div className="row">
+                <div className="row" style={{marginTop:'40px'}}>
                     {loading ?<Loading /> :<ShowProducts1 /> }
                 </div>
                 

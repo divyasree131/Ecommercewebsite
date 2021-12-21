@@ -12,14 +12,16 @@ import Cart from './Components/Cart'
 import { BrowserRouter,Route } from 'react-router-dom';
 import Products from './Components/Products';
 import Productdetails from './Components/Productdetails';
-import store from './Redux/Store/index'
+import {store,persistor} from './Redux/Store/index'
 import { Provider } from 'react-redux'
-
+import Checkout from './Components/Checkout'
+import {PersistGate} from 'redux-persist/integration/react'
+import Home from './Components/Home'
 ReactDOM.render(
 <Provider store={store}>
 
 <BrowserRouter>
-
+    <PersistGate persistor={persistor}>
     <Route exact path="/" component = {App} />
     <Route exact path="/login" component = {Login} />
     <Route exact path="/signup" component={Signup} />
@@ -27,6 +29,9 @@ ReactDOM.render(
     <Route exact path="/products/:id" component={Productdetails} />
     <Route exact path="/about" component={About} />
     <Route exact path="/cart" component={Cart} />
+    <Route exact path="/home" component = {Home} />
+    <Route exact path ="/checkout" component={Checkout} />
+    </PersistGate>
     </BrowserRouter>
     </Provider>
     

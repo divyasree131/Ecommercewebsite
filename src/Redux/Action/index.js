@@ -13,3 +13,9 @@ export const DelCart=(product)=>{
         payload:product
     }
 }
+export const RemCart=(product)=>{
+    return{
+        type:'REMOVE',
+        payload:product
+    }
+}

@@ -40,7 +40,7 @@ const filterProduct=(cat)=>{
 const ShowProducts=()=>{
     return(
         <>
-        <div className="button me-2">
+        <div className="button me-2 justify-content-center text-center">
         <button type="button" className="btn btn-outline-dark me-2" onClick={()=>setfilter(data)}>All</button>
             <button type="button" className="btn btn-outline-dark me-2" onClick={()=>filterProduct("men's clothing")}>Men</button>
             <button type="button" className="btn btn-outline-dark me-2" onClick={()=>filterProduct("women's clothing")}>Women</button>
@@ -51,7 +51,7 @@ const ShowProducts=()=>{
         {filter.map((product)=>{
             return(
                 <>
-                <div className="col-md-3 mb-4" >
+                <div className="col-md-3 mb-4" style={{marginTop:10}}>
                 <div className="card h-100 text-center p-4" key={product.id}>
                     <img className="card-img-top" src={product.image} alt={product.title} height="350px" />
                     <div className="card-body">
@@ -73,7 +73,7 @@ const ShowProducts=()=>{
         <div>
             
             <div className="container">
-                <div className="row">
+                <div className="row text-center">
                     <div className="col-12 mb-5">
                         <h1>Latest Products</h1>
                     </div>
